@@ -20,6 +20,7 @@
 
 import xml.etree.ElementTree as ET
 import random
+import sys
 
 # corner from/to zomming in/out
 # 1 top left
@@ -43,6 +44,11 @@ effectListMove = (10, 11, 12, 13, 14, 15)
 
 # 10% zooming in or out
 zoom = 1.1
+
+if(len(sys.argv) < 2 ):
+    print ("kdenlive slideshow generator")
+    print ("usage: ksg.py projekt.kdenlive")
+    sys.exit()
 
 def makeEffect(inTime, outTime, frameW, frameH, imageW, imageH, orientation):
 
@@ -200,7 +206,7 @@ def makeEffect(inTime, outTime, frameW, frameH, imageW, imageH, orientation):
 
 ########### start of main
 
-tree = ET.parse('testviele.kdenlive')
+tree = ET.parse(sys.argv[1])
 root = tree.getroot()
 
 #print(tree)
