@@ -17,7 +17,6 @@
 # effectListZoom/effectListMove:
 # you can choose which zoom/move effects are used
 # or how often if you add them multiple times to the list
-# the effects were randomly choosen from this lists
 
 import xml.etree.ElementTree as ET
 import random
@@ -65,7 +64,7 @@ def makeEffect(inTime, outTime, frameW, frameH, imageW, imageH, orientation):
         endX = (frameW - endW) / 2
         endY = 0
 
-        return (inTime, startX, startY, startW, startH, outTime, endX, endY, endW, endH)
+        return (inTime, round(startX), round(startY), round(startW), round(startH), outTime, round(endX), round(endY), round(endW), round(endH))
 
     #landscape image orientation
 
@@ -202,7 +201,7 @@ def makeEffect(inTime, outTime, frameW, frameH, imageW, imageH, orientation):
             endX = 0
             endY = frameH - endH
 
-    return (inTime, startX, startY, startW, startH, outTime, endX, endY, endW, endH)
+    return (inTime, round(startX), round(startY), round(startW), round(startH), outTime, round(endX), round(endY), round(endW), round(endH))
 
 
 ########### start of main
@@ -284,7 +283,7 @@ for playlist in root.iterfind('playlist'):
             rect.text = "%s=%s %s %s %s 1.000000;%s=%s %s %s %s 1.000000" % effectData;
 
             rotation = ET.SubElement(filter, 'property', {'name' : 'rotation'})
-            rotation.text = '0';
+            rotation.text = "%s=0;%s=0" % (entryIn, entryOut);
 
             compositing = ET.SubElement(filter, 'property', {'name' : 'compositing'})
             compositing.text = '0';
