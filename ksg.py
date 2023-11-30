@@ -17,6 +17,7 @@
 # effectListZoom/effectListMove:
 # you can choose which zoom/move effects are used
 # or how often if you add them multiple times to the list
+# the effects were randomly choosen from this lists
 
 import xml.etree.ElementTree as ET
 import random
