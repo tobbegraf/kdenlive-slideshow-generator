@@ -241,7 +241,13 @@ for playlist in root.iterfind('playlist'):
             sourceFile = producer.find("./property/[@name='resource']").text
             sourceWidth = int(producer.find("./property/[@name='meta.media.width']").text)
             sourceHeight = int(producer.find("./property/[@name='meta.media.height']").text)
-            print ("working on %s" % (sourceFile))
+
+            # skip entry if it already contains a filter
+            if entry.find('filter') is not None:
+                print("skipping %s (a filter already exists)" % (sourceFile))
+                continue
+            else:
+                print ("working on %s" % (sourceFile))
 
             # fill the frame with the image
             hRatio = targetWidth / sourceWidth
