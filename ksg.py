@@ -236,8 +236,13 @@ for playlist in root.iterfind('playlist'):
             entryIn = entry.get('in')
             entryOut = entry.get('out')
 
-            # get data from the producer element
+            # find producer element
             producer = root.find("./producer[@id='%s']" % entry.get('producer'))
+            if producer is None:
+                # entry is not a frame
+                continue
+
+            # get data from the producer element
             sourceFile = producer.find("./property/[@name='resource']").text
             sourceWidth = int(producer.find("./property/[@name='meta.media.width']").text)
             sourceHeight = int(producer.find("./property/[@name='meta.media.height']").text)
