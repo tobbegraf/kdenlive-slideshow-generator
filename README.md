@@ -12,6 +12,6 @@ usage: ksg.py projectfile.kdenlive
 You need a prepared kdenlive project file:
 All images in a timeline with the desired duration
 and transitions.
-Run the tool with the filename as arugmuent and
+Run the tool with the filename as argument and
 then open the created slideshow.kdenlive file in kdenlive
 for rendering or further editing.
