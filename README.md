@@ -3,7 +3,7 @@
 ksg@philipphome.de\
 GPL V3
 
-This tool will take a existing Kdenlive project files with picures in the timeline
+This tool will take a existing [Kdenlive}(https://kdenlive.org/) project files with picures in the timeline
 and will add zomm and move effects to every picture.
 The output will be stored in the file slideshow.kdenlive in the working directory.
 
