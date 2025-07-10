@@ -1,7 +1,7 @@
 # kdenlive slideshow generator
 2023 Tobias Philipp\
 ksg@philipphome.de\
-GPL V3\
+GPL V3
 
 This tool will take a existing Kdenlive project files with picures in the timeline
 and will add zomm and move effects to every picture.
